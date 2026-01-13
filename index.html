@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diamond City RolePlay</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Cairo:wght@600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Cairo',sans-serif;
+  background:#020a1f;
+  color:#fff;
+}
+
+/* HEADER */
+header{
+  height:100vh;
+  background:url("img3.webp") center/cover no-repeat;
+  position:relative;
+}
+
+header::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.75);
+}
+
+.header-content{
+  position:relative;
+  z-index:2;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.header-content h1{
+  font-family:'Orbitron',sans-serif;
+  font-size:42px;
+  color:#00cfff;
+  text-shadow:0 0 25px #00cfff;
+}
+
+.header-content p{
+  margin:15px 0;
+  font-size:18px;
+  max-width:600px;
+}
+
+.btn{
+  margin-top:20px;
+  padding:15px 45px;
+  background:#00cfff;
+  color:#000;
+  border-radius:40px;
+  text-decoration:none;
+  font-size:18px;
+  box-shadow:0 0 25px #00cfff;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+}
+
+/* SECTION */
+section{
+  padding:70px 20px;
+  text-align:center;
+}
+
+section h2{
+  color:#00cfff;
+  margin-bottom:30px;
+  font-size:30px;
+}
+
+/* SLIDER */
+.slider{
+  max-width:900px;
+  margin:auto;
+  position:relative;
+}
+
+.slide{
+  display:none;
+}
+
+.slide img{
+  width:100%;
+  border-radius:20px;
+  box-shadow:0 0 25px rgba(0,207,255,.6);
+}
+
+/* GALLERY */
+.gallery{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:20px;
+  transition:.4s;
+  box-shadow:0 0 20px rgba(0,207,255,.5);
+}
+
+.gallery img:hover{
+  transform:scale(1.05);
+}
+
+/* INFO */
+.info{
+  max-width:900px;
+  margin:auto;
+  background:rgba(0,0,0,.6);
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 0 25px rgba(0,207,255,.6);
+  text-align:right;
+}
+
+.info h3{
+  color:#00cfff;
+  margin:20px 0 10px;
+}
+
+.info ul li{
+  margin:8px 0;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  padding:25px;
+  text-align:center;
+  color:#00cfff;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-content">
+    <h1>DIAMOND CITY RP</h1>
+    <p>أفضل سيرفر رول بلاي SA-MP | تجربة احترافية واقعية | إدارة قوية | مجتمع نشط</p>
+    <a href="https://discord.gg/gqn3nxEj" target="_blank" class="btn">🚀 دخول الديسكورد</a>
+  </div>
+</header>
+
+<section>
+  <h2>🌍 صور من داخل المدينة</h2>
+  <div class="slider">
+    <div class="slide"><img src="img1.webp"></div>
+    <div class="slide"><img src="img2.webp"></div>
+    <div class="slide"><img src="img3.webp"></div>
+  </div>
+</section>
+
+<section>
+  <h2>🔥 Diamond City World</h2>
+  <div class="gallery">
+    <img src="img1.webp">
+    <img src="img2.webp">
+    <img src="img3.webp">
+  </div>
+</section>
+
+<section>
+  <h2>📜 القوانين الأساسية</h2>
+  <div class="info">
+    <h3>💬 ديسكورد</h3>
+    <ul>
+      <li>ممنوع السب والشتم</li>
+      <li>احترام جميع الأعضاء</li>
+      <li>ممنوع الترويج</li>
+    </ul>
+
+    <h3>🎭 رول بلاي</h3>
+    <ul>
+      <li>الالتزام بالشخصية</li>
+      <li>ممنوع الخروج عن RP</li>
+      <li>ممنوع استغلال الثغرات</li>
+    </ul>
+
+    <h3>🛡️ Save Zone</h3>
+    <ul>
+      <li>ممنوع القتل أو السرقة</li>
+      <li>ممنوع التهديد</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <a href="https://discord.gg/gqn3nxEj" target="_blank" class="btn">💬 Discord</a>
+  <p>© Diamond City RolePlay 2025</p>
+</footer>
+
+<script>
+let index = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlides(){
+  slides.forEach(slide => slide.style.display = "none");
+  index++;
+  if(index > slides.length){ index = 1; }
+  slides[index-1].style.display = "block";
+}
+
+showSlides();
+setInterval(showSlides, 3000);
+</script>
+
+</body>
+</html>
